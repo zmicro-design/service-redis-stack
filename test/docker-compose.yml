@@ -1,0 +1,13 @@
+services:
+  REDIS_STACK:
+    restart: always
+    image: whatwewant/REDIS_STACK:${SERVICE_REDIS_STACK_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_REDIS_STACK_PORT
+      USERNAME: ${SERVICE_REDIS_STACK_USERNAME}
+      PASSWORD: ${SERVICE_REDIS_STACK_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
